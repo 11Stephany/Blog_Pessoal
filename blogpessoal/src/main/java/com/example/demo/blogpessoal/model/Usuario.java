@@ -29,9 +29,9 @@ public class Usuario {
 	@NotBlank(message = "O email é obrigatório")
 	@Email(message = "seuemail@123.com")
 	private String usuario;
-
+//para senhas não setar max, devido a criptografia 
 	@NotBlank(message = "A senha é obrigatório")
-	@Size(min = 6, max = 16, message = "A senha deve conter entre 6 a 16 caracteres")
+	@Size(min = 6 )
 	private String senha;
 
 	private String foto;
