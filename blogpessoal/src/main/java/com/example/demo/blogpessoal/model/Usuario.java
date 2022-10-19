@@ -31,7 +31,7 @@ public class Usuario {
 	private String usuario;
 //para senhas não setar max, devido a criptografia 
 	@NotBlank(message = "A senha é obrigatório")
-	@Size(min = 6 )
+	@Size(min = 6)
 	private String senha;
 
 	private String foto;
@@ -39,6 +39,20 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+
+	
+
+	public Usuario(Long id, String nome, String usuario,String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	}
+
+	public Usuario() {
+		
+	}
 
 	public Long getId() {
 		return id;
@@ -87,7 +101,5 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
 
 }
